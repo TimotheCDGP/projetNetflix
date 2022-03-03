@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e4c167b4f9.js" crossorigin="anonymous"></script>
+    <title>Netflix</title>
+
+</head>
+
+<body class="bg-black">
+   
+    <div class="flex">
+        <img class="h-22 w-40 ml-5" src="assets/img/logo.png">
+        <div class="flex-auto mt-8 ml-10">
+            
+            <a href="" class="ml-5 text-white text-2xl">Home</a>
+            <a href="" class="ml-5 text-white text-2xl">TV Shows</a>
+            <a href="" class="ml-5 text-white text-2xl">Movies</a>
+            <a href="" class="ml-5 text-white text-2xl">New & Popular</a>
+            <a href="" class="ml-5 text-white text-2xl">My List</a>
+            <a href="" class="ml-5 text-white text-2xl">Watch Again</a>
+        </div>
+
+        <div class="flex flex-row gap-8 mt-10 mr-8 justify-end">
+            <div class="text-white text-2xl"><i class="fa-solid fa-magnifying-glass"></i></div>
+            <div class="text-white text-2xl"><i class="fa-solid fa-gift"></i></div>
+            <div class="text-white text-2xl"><i class="fa-solid fa-bell"></i></div>
+            <img class="h-10 w-15 -mt-2 rounded-md" src="assets/img/profile.jpg">
+            <div class="text-white text-1xl -ml-5"><i class="fa-solid fa-chevron-down"></i></div>
+        </div>
+    </div>
+    <div class="w-full h-full bg-no-repeat bg-cover -mt-24 opacity-25" style="background-image: url(./assets/img/arcane.jpg)"></div>
+
+</body>
+</html>
