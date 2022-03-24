@@ -111,6 +111,7 @@ window.onload = function() {
     
     primary_hover('.primary_hover','.arcane');
     // aux_hover('.', '.')
+    random("listRandom");
     random("showRandom");
     random("trendingRandom");
     random("continueRandom");
