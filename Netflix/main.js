@@ -83,6 +83,7 @@ function random(img_class, vid_class){
         var class_selected = document.getElementById(img_name);
         class_selected.src = "assets/img/" + randomImg
         
+        // Définit une vidéo aléatoire de la catégorie de l'image aléatoire
         if(img_class=="listRandom"){randomVid = videos.my_list[random]
         var vid_selected = document.getElementById(vid_name)
         vid_selected.src = "assets/movies/" + randomVid
@@ -151,7 +152,7 @@ window.onload = function() {
     random("continueRandom");
     random("originalsRandom");
     random("westernRandom");
-    random("docuRandom"); // ERREUR BLOQUANTE A REGLER AVANT DIMANCHE (empêche l'exécution des autres fonctions) RANDOMIZER_i7
+    random("docuRandom");
     random("sciRandom");
     random("actionRandom");
     random("horrorRandom");
