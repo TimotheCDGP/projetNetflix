@@ -28,33 +28,51 @@ const images = {
     "action":["action1.png","action2.png","action3.png","action4.png","action5.png","action6.png","action7.png"],
     "horror":["horror1.png","horror2.png","horror3.png","horror4.png","horror5.png","horror6.png","horror7.png"]
 }
+const videos = {
+    "my_list":["piece_minia.mp4","class_minia.mp4","arcane_short.mp4","never_minia.mp4","fairy_minia.mp4","naruto_minia.mp4","snk_minia.mp4"],
+    "tv_show":[],
+    "trending_now":[],
+    "continue_watching":[],
+    "originals":[],
+    "western":[],
+    "documentary":[],
+    "science":[],
+    "action":[],
+    "horror":[]
+}
 
-function random(img_class){
+function random(img_class, vid_class){
     // Choix de la catégorie selon le nom
+    // En fonction du nom de la catégorie, définit la longueur de celle-ci
     var category_length; var double = [];
-    if(img_class=="listRandom"){category_length=images.my_list.length+1};
-    if(img_class=="showRandom"){category_length=images.tv_show.length+1};
-    if(img_class=="trendingRandom"){category_length=images.trending_now.length+1};
-    if(img_class=="continueRandom"){category_length=images.continue_watching.length+1};
-    if(img_class=="originalsRandom"){category_length=images.originals.length+1};
-    if(img_class=="westernRandom"){category_length=images.western.length+1};
-    if(img_class=="docuRandom"){category_length=images.documentary.length+1};
-    if(img_class=="sciRandom"){category_length=images.science.length+1};
-    if(img_class=="actionRandom"){category_length=images.action.length+1};
-    if(img_class=="horrorRandom"){category_length=images.horror.length+1};
+    if(img_class=="listRandom"){category_length=images.my_list.length};
+    if(img_class=="showRandom"){category_length=images.tv_show.length};
+    if(img_class=="trendingRandom"){category_length=images.trending_now.length};
+    if(img_class=="continueRandom"){category_length=images.continue_watching.length};
+    if(img_class=="originalsRandom"){category_length=images.originals.length};
+    if(img_class=="westernRandom"){category_length=images.western.length};
+    if(img_class=="docuRandom"){category_length=images.documentary.length};
+    if(img_class=="sciRandom"){category_length=images.science.length};
+    if(img_class=="actionRandom"){category_length=images.action.length};
+    if(img_class=="horrorRandom"){category_length=images.horror.length};
+
     // Empêche l'apparition de deux images identiques
-    for(let i=1;i<7;i++){
-        var random = Math.floor(Math.random() * (category_length-1))
+    // en bref : génère une combinaison de chiffres aléatoires ne se répétant pas (d'une longueur définie par category_lenght)
+    for(let i=1;i<=category_length;i++){
+        var random = Math.floor(Math.random() * category_length)
         if(!double.includes(random)){double.push(random)}
-        else{
+        else{   // Trouve un autre nombre tant qu'il existe déjà
             while(double.includes(random)){
-            random = Math.floor(Math.random() * (category_length-1))
+            random = Math.floor(Math.random() * category_length)
             }
             double.push(random)
         }
         // Attribution de l'image aléatoire en fonction de la catégorie
         var img_name = img_class + i
         var randomImg;
+        var vid_name = vid_class + i
+        var randomVid;
+        
         if(img_class=="listRandom"){randomImg = images.my_list[random]};
         if(img_class=="showRandom"){randomImg = images.tv_show[random]};
         if(img_class=="trendingRandom"){randomImg = images.trending_now[random]};
@@ -66,20 +84,29 @@ function random(img_class){
         if(img_class=="actionRandom"){randomImg = images.action[random]};
         if(img_class=="horrorRandom"){randomImg = images.horror[random]};
             
+        if(img_class=="listRandom"){randomVid = videos.my_list[random]}
+
         var class_selected = document.getElementById(img_name);
         class_selected.src = "assets/img/" + randomImg
-    }
 
+        var vid_selected = document.getElementById(vid_name)
+        vid_selected.src = "assets/movies/" + randomVid
+
+        
+        
+    }
+    // if(img_class=="listRandom"){!alert(double)}
 }
 
 // function playit(id){
 //     var x = document.getElementById(id);
 //     x.play();
 // }
-function test(id){
-    var x = document.getElementById(id);
-    x.play();
-}
+
+// function test(id){
+//     var video =document.querySelector(id)
+//     video.play()
+// }
 
 function primary_hover (video_area, video){
     var video_area =document.querySelector(video_area)
@@ -93,25 +120,36 @@ function primary_hover (video_area, video){
     });
 }
 
-// function aux_hover (video_area, video, img){
-//     var video_area =document.querySelector(video_area)
-//     var video =document.querySelector(video)
+function aux_hover (video_area, video, img){
+    var area = document.querySelector(video_area)
+    var video = document.querySelector(video)
+    var image = document.querySelector(img)
 
-//     video_area.addEventListener('mouseenter', function (){
-//         video.play()
-//     });
-//     video_area.addEventListener('mouseleave', function (){
-//         video.pause() 
-//     });
-// }
+    area.addEventListener('mouseenter', function (){
+        video.style.display = "unset";
+        image.style.display = "none"
+        video.play()
+        
+    });
+    area.addEventListener('mouseleave', function (){
+        video.pause()
+        video.style.display = "none";
+        image.style.display = "unset";
+    });
+}
 
 
 // Exécutes les fonctions une fois la fenêtre chargée
 window.onload = function() {
-    
     primary_hover('.primary_hover','.arcane');
-    // aux_hover('.', '.')
-    random("listRandom");
+    aux_hover('.cont1', '.vid1','.img1');
+    aux_hover('.cont2', '.vid2','.img2');
+    aux_hover('.cont3', '.vid3','.img3');
+    aux_hover('.cont4', '.vid4','.img4');
+    aux_hover('.cont5', '.vid5','.img5');
+    aux_hover('.cont6', '.vid6','.img6');
+    aux_hover('.cont7', '.vid7','.img7');
+    random("listRandom","vidRandom");
     random("showRandom");
     random("trendingRandom");
     random("continueRandom");
