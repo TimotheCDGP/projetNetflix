@@ -20,7 +20,7 @@
         <div class="top-0 absolute bg-gradient-to-b from-black w-screen h-[6rem]"></div>
 
         <div class="h-screen w-screen bg-no-repeat bg-cover absolute -z-10 group-hover:invisible" style="background-image: url(./assets/img/logo.jpg)"></div>
-        <video onmouseenter="play('.video')" loop="loop" class="h-fit w-screen object-cover invisible group-hover:visible arcane" src="assets/movies/arcane_en_finale.mp4"></video>
+        <video onmouseenter="play('.video')" loop="loop" muted class="h-fit w-screen object-cover invisible group-hover:visible arcane" src="assets/movies/arcane_en_finale.mp4"></video>
 
         <div class="bottom-0 absolute bg-gradient-to-t from-black w-screen h-[6rem] group-hover:hidden"></div>
     </section>
@@ -29,7 +29,7 @@
         <section>
             <nav class="flex grid place-items-center fixed top-0 w-full lg:flex">
                 <img class="h-22 w-40 ml-5" src="assets/img/logo.png">
-                <div class="invisible flex-auto ml-5 font-sans lg:visible">  
+                <div class="invisible flex-auto ml-5 font-sans lg:visible">
                     <a href="#" class="ml-5 text-white transition delay-50 duration-100 ease-in-out drop-shadow-md font-bold text-2xl">Home</a>
                     <a href="#" class="ml-5 text-white transition delay-50 duration-100 ease-in-out text-2xl hover:text-orange-500">TV Shows</a>
                     <a href="#" class="ml-5 text-white transition delay-50 duration-100 ease-in-out text-2xl hover:text-orange-500">Movies</a>
@@ -81,15 +81,41 @@
                         <i class="fas fa-angle-left fa-3x absolute -mt-10"></i>
                     </button>
                 </div>
-                
-                <div><div class="h-32 w-56"><a href="#"><img id="listRandom1" class="h-32 w-56 rounded-lg" src="assets/img/one-piece.png"></a></div></div>
-                <div><div class="h-32 w-56"><a href="#"><img id="listRandom2" class="h-32 w-56 rounded-lg" src="assets/img/classroom.png"></a></div></div>
-                <div><div class="h-32 w-56"><a href="#"><img id="listRandom3" class="h-32 w-56 rounded-lg" src="assets/img/arcane.png"></a></div></div>
-                <div><div class="h-32 w-56"><a href="#"><img id="listRandom4" class="h-32 w-56 rounded-lg" src="assets/img/neverland.png"></a></div></div>
-                <div><div class="h-32 w-56"><a href="#"><img id="listRandom5" class="h-32 w-56 rounded-lg" src="assets/img/fairy.png"></a></div></div>
-                <div><div class="h-32 w-56"><a href="#"><img id="listRandom6" class="h-32 w-56 rounded-lg" src="assets/img/naruto.png"></a></div></div>
-                <div><div class="h-32 w-56"><a href="#"><img id="listRandom7" class="h-32 w-56 rounded-lg" src="assets/img/titan.png"></a></div></div>
-                
+                <!-- ---------------------------------------------------------------------------------------------------------------------------- -->
+                <div class="cont1"><div class="h-32 w-56"><a href="#">
+                    <video id="vidRandom1" class="h-32 w-56 rounded-lg transition 2xl:absolute ease-in-out delay-150 hover:-translate-y-5 hover:scale-110 duration-300 hidden vid1" loop="loop" muted src="assets/movies/piece_minia.mp4"></video>
+                    <img id="listRandom1" class="h-32 w-56 rounded-lg img1" src="assets/img/one-piece.png">
+                </a></div></div>
+
+                <div class="cont2"><div class="h-32 w-56"><a href="#">
+                    <img id="listRandom2" class="h-32 w-56 rounded-lg img2" src="assets/img/classroom.png">
+                    <video id="vidRandom2" class="h-32 w-56 rounded-lg transition 2xl:absolute ease-in-out delay-150 hover:-translate-y-5 hover:scale-110 duration-300 hidden vid2" loop="loop" muted src="assets/movies/class_minia.mp4"></video>
+                </a></div></div>
+
+                <div class="cont3"><div class="h-32 w-56"><a href="#">
+                    <video id="vidRandom3" class="h-32 w-56 rounded-lg transition 2xl:absolute ease-in-out delay-150 hover:-translate-y-5 hover:scale-110 duration-300 hidden vid3" loop="loop" muted src="assets/movies/arcane_short.mp4"></video>
+                    <img id="listRandom3" class="h-32 w-56 rounded-lg img3" src="assets/img/arcane.png">
+                </a></div></div>
+
+                <div class="cont4"><div class="h-32 w-56"><a href="#">
+                    <video id="vidRandom4" class="h-32 w-56 rounded-lg transition 2xl:absolute ease-in-out delay-150 hover:-translate-y-5 hover:scale-110 duration-300 hidden vid4" loop="loop" muted src="assets/movies/never_minia.mp4"></video>
+                    <img id="listRandom4" class="h-32 w-56 rounded-lg img4" src="assets/img/neverland.png">
+                </a></div></div>
+
+                <div class="cont5"><div class="h-32 w-56"><a href="#">
+                    <video id="vidRandom5" class="h-32 w-56 rounded-lg transition 2xl:absolute ease-in-out delay-150 hover:-translate-y-5 hover:scale-110 duration-300 hidden vid5" loop="loop" muted src="assets/movies/fairy_minia.mp4"></video>
+                    <img id="listRandom5" class="h-32 w-56 rounded-lg img5" src="assets/img/fairy.png">
+                </a></div></div>
+                <div class="cont6"><div class="h-32 w-56"><a href="#">
+                    <video id="vidRandom6" class="h-32 w-56 rounded-lg transition 2xl:absolute ease-in-out delay-150 hover:-translate-y-5 hover:scale-110 duration-300 hidden vid6" loop="loop" muted src="assets/movies/naruto_minia.mp4"></video>
+                    <img id="listRandom6" class="h-32 w-56 rounded-lg img6" src="assets/img/naruto.png">
+                </a></div></div>
+
+                <div class="cont7"><div class="h-32 w-56"><a href="#">
+                    <video id="vidRandom7" class="h-32 w-56 rounded-lg transition 2xl:absolute ease-in-out delay-150 hover:-translate-y-5 hover:scale-110 duration-300 hidden vid7" loop="loop" muted src="assets/movies/snk_minia.mp4"></video>
+                    <img id="listRandom7" class="h-32 w-56 rounded-lg img7" src="assets/img/titan.png">
+                </a></div></div>
+                <!-- ---------------------------------------------------------------------------------------------------------------------------- -->
                 <div class="absolute right-0 cursor-pointer transition delay-50 duration-700 ease-in-out opacity-0 opacity-0 group-hover:opacity-100 rightArrow1" onClick="rightScroll('.carousel1')">
                     <button class="p-4 h-40 mr-2 focus:outline-none">
                         <i class="fas fa-angle-right fa-3x absolute right-0 -mt-10"></i>
