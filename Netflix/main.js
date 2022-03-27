@@ -1,16 +1,12 @@
 // Flèche gauche
-function leftScroll(carousel, lefttArrow) {
-
+function leftScroll(carousel) {
     var scroll = document.querySelector(carousel);
-    var left = document.querySelector(lefttArrow);   
     scroll.scrollLeft -= scroll.offsetWidth;
 }
 
 // Flèche droite
-function rightScroll(carousel, rightArrow) {
-
-    var scroll = document.querySelector(carousel);
-    var right = document.querySelector(rightArrow);   
+function rightScroll(carousel) {
+    var scroll = document.querySelector(carousel);   
     scroll.scrollLeft += scroll.offsetWidth;
 }
 
@@ -84,14 +80,13 @@ function random(img_class, vid_class){
         if(img_class=="actionRandom"){randomImg = images.action[random]};
         if(img_class=="horrorRandom"){randomImg = images.horror[random]};
             
-        if(img_class=="listRandom"){randomVid = videos.my_list[random]}
-
         var class_selected = document.getElementById(img_name);
         class_selected.src = "assets/img/" + randomImg
-
+        
+        if(img_class=="listRandom"){randomVid = videos.my_list[random]
         var vid_selected = document.getElementById(vid_name)
         vid_selected.src = "assets/movies/" + randomVid
-
+        }
         
         
     }
@@ -149,13 +144,14 @@ window.onload = function() {
     aux_hover('.cont5', '.vid5','.img5');
     aux_hover('.cont6', '.vid6','.img6');
     aux_hover('.cont7', '.vid7','.img7');
+
     random("listRandom","vidRandom");
     random("showRandom");
     random("trendingRandom");
     random("continueRandom");
     random("originalsRandom");
     random("westernRandom");
-    random("docuRandom");
+    random("docuRandom"); // ERREUR BLOQUANTE A REGLER AVANT DIMANCHE (empêche l'exécution des autres fonctions) RANDOMIZER_i7
     random("sciRandom");
     random("actionRandom");
     random("horrorRandom");
