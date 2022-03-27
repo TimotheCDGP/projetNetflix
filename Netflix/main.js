@@ -155,7 +155,7 @@ window.onload = function() {
     random("continueRandom");
     random("originalsRandom");
     random("westernRandom");
-    random("docuRandom"); // ERREUR BLOQUANTE A REGLER AVANT DIMANCHE (empêche l'exécution des autres fonctions) RANDOMIZER_i7
+    random("docuRandom");
     random("sciRandom");
     random("actionRandom");
     random("horrorRandom");
