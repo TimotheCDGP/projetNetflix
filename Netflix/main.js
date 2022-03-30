@@ -135,6 +135,18 @@ function aux_hover (video_area, video, img){
 }
 
 
+
+window.onscroll = function() {
+    var header = document.querySelector("headerback");
+    if(window.scrollY >= 215){
+        header.addClass('bg-black')
+    }
+    else{
+        header.removeClass('bg-black')
+    }
+}
+
+
 // Exécutes les fonctions une fois la fenêtre chargée
 window.onload = function() {
     primary_hover('.primary_hover','.arcane');
