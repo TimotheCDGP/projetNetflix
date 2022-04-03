@@ -146,23 +146,44 @@ window.onscroll = function() {
     }
 }
 
-function bell_hover (){
-    var bell = document.querySelector('.bell')
-    var bell_area = document.querySelector('.bellarea')
-    var ext = document.querySelector('.primary_hover')
+function menu_hover (){
+    var
+    bell = document.querySelector('.bell'),
+    bell_area = document.querySelector('.bellarea'),
+    ext = document.querySelector('.primary_hover');
 
     bell.addEventListener('mouseenter', function (){
         bell_area.style.display = "unset"
+        avatar_area.style.display = "none"
+        arrow.style.transform = "unset"
     });
     ext.addEventListener('mouseenter', function (){
         bell_area.style.display = "none"
     });
+
+
+    var
+    avatar = document.querySelector('.avatar'),
+    avatar_area = document.querySelector('.avatar_area'),
+    ext = document.querySelector('.primary_hover'),
+    arrow = document.querySelector('.arrow');
+
+    avatar.addEventListener('mouseenter', function (){
+        arrow.style.transform = "rotate(180deg)"
+        avatar_area.style.display = "unset"
+        bell_area.style.display = "none"
+    });
+    ext.addEventListener('mouseenter', function (){
+        arrow.style.transform = "unset"
+        avatar_area.style.display = "none"
+    });
 }
+
 
 // Exécutes les fonctions une fois la fenêtre chargée
 window.onload = function() {
     primary_hover('.primary_hover','.arcane');
-    bell_hover();
+    menu_hover();
     aux_hover('.cont1', '.vid1','.img1');
     aux_hover('.cont2', '.vid2','.img2');
     aux_hover('.cont3', '.vid3','.img3');
